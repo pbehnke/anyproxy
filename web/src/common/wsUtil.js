@@ -18,7 +18,7 @@ export function initWs(wsPort = location.port, path = 'do-not-proxy') {
     throw (new Error('WebSocket is not supported on this browser'));
   }
 
-  const wsClient = new WebSocket(`ws://${location.hostname}:${wsPort}/${path}`);
+  const wsClient = new WebSocket(`wss://${location.hostname}:${wsPort}/${path}`);
 
   wsClient.onerror = (error) => {
     console.error(error);
